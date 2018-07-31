@@ -12,27 +12,8 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class Application {
 
-
-    // not sure if here or in the Request class
-    // private static final Logger log = LoggerFactory.getLogger(Application.class);
-
-
     public static void main(String args[]) {
         SpringApplication.run(Application.class);
     }
 
-    @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        return builder.build();
-    }
-
-        //copied from gs-consuming-rest project
-//    @Bean
-//    public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-//        return args -> {
-//            Quote quote = restTemplate.getForObject(
-//                    "http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
-//            log.info(quote.toString());
-//        };
-//    }
 }
