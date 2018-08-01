@@ -2,6 +2,7 @@ package newsapi.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
@@ -9,5 +10,11 @@ public class HomeController {
     @GetMapping (path = "/")
     public String home() {
         return "home";
+    }
+
+    @GetMapping (path = "/test")
+    @ResponseBody
+    public String test() {
+        return "TEST";
     }
 }
