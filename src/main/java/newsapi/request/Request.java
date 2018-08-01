@@ -32,8 +32,12 @@ public class Request implements RequestInterface
         return execute(finalUrl);
     }
 
+
     public String getSources() {
-        return execute(SOURCES_URL);
+        String finalUrl = SOURCES_URL
+                + "?category=technology"
+                + "&country=pl";
+        return execute(finalUrl);
     }
 
     private String execute(final String urlString) {
