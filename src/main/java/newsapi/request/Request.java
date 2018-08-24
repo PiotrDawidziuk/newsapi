@@ -1,5 +1,7 @@
 package newsapi.request;
 
+import newsapi.objects.Country;
+import newsapi.objects.NewsCategory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,20 +27,42 @@ public class Request implements RequestInterface
         this.apiKey = apiKey;
     }
 
-
-
     public String getArticles(final String source) {
         String finalUrl = ARTICLES_URL + "?source=" + source;
         return execute(finalUrl);
     }
 
+//    public String getArticles(String source, SortingMethod sortingMethod) {
+//        String finalUrl = ARTICLES_URL
+//                + "?source=" + source
+//                + "&sortBy=" + sortingMethod.getMethod();
+//        return execute(finalUrl);
+//    }
 
     public String getSources() {
-        String finalUrl = SOURCES_URL
-                + "?category=technology"
-                + "&country=pl";
+        return execute(SOURCES_URL);
+    }
+
+    public String getSources(NewsCategory newsCategory) {
+        String finalUrl = SOURCES_URL + "?category=" + newsCategory.getCategoryId();
         return execute(finalUrl);
     }
+
+
+    public String getSources(Country country) {
+        String finalUrl = SOURCES_URL + "?country=" + country.getCountryCode();
+        return execute(finalUrl);
+    }
+
+    public String getSources(NewsCategory newsCategory, Country country) {
+        String finalUrl = SOURCES_URL
+                + "?category=" + newsCategory.getCategoryId()
+                + "&country=" + country.getCountryCode();
+        return execute(finalUrl);
+    }
+
+
+
 
     private String execute(final String urlString) {
         try {

@@ -3,11 +3,10 @@ package newsapi.objects;
 public enum NewsCategory {
     BUSINESS("business"),
     ENTERTAINMENT("entertainment"),
-    GAMING("gaming"),
     GENERAL("general"),
     MUSIC("music"),
-    SCIENCE_NATURE("science-and-nature"),
-    SPORT("sport"),
+    SCIENCE("science"),
+    SPORTS("sports"),
     TECHNOLOGY("technology");
 
     private final String categoryId;
