@@ -8,6 +8,7 @@ public class Client {
 
     private final String apiKey;
 
+    // ERROR? Could not autowire
     public Client(String apiKey) {
         this.apiKey = apiKey;
     }
