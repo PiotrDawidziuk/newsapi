@@ -15,7 +15,7 @@ public class NewsController {
     // new Request?
 
     @RequestMapping("/news")
-    public String greeting(@RequestParam(value="Country", defaultValue="pl") String name) {
+    public String news(@RequestParam String category, @RequestParam String country) {
         return "news";
 
     }
