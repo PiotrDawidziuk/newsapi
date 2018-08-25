@@ -13,6 +13,5 @@ public class Application {
     }
 
 
-//    @Autowired
-//    public  Client client = new Client("YOUR_API_KEY");
+    public  Client client = new Client("YOUR_API_KEY");
 }
