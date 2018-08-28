@@ -1,5 +1,6 @@
 package newsapi;
 
+import newsapi.service.NewsApiService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -15,4 +16,6 @@ public class Application {
     public String apiKey() {
         return "YOUR_API_KEY";
     }
+
+
 }

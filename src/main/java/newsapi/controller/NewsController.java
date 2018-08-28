@@ -1,19 +1,24 @@
 package newsapi.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import newsapi.objects.Article;
+import newsapi.objects.Country;
+import newsapi.objects.NewsCategory;
+import newsapi.service.NewsApiService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.List;
+
+@RestController
 public class NewsController {
 
-    // new Country? NewsCategory?
+   @Autowired
+   NewsApiService newsApiService;
 
-    // new Request?
-
-    @RequestMapping("/news")
-    public String news(@RequestParam String category, @RequestParam String country) {
-        return "news";
-
+    @GetMapping("/news/{country}/{category}")
+    public List<Article> news(@PathVariable Country country, @PathVariable NewsCategory category) {
+        return newsApiService.findArticlesByCountryAndCategory(country,category);
     }
 }
