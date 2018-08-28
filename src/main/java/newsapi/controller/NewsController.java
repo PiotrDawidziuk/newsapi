@@ -16,7 +16,7 @@ public class NewsController {
    NewsApiService newsApiService;
 
     @GetMapping("/news/{country}/{category}")
-    public List<Article> news(@PathVariable String country, @PathVariable String category) {
+    public List<Article> news(@PathVariable ("country") String country, @PathVariable ("category") String category) {
         return newsApiService.findArticlesByCountryAndCategory(country,category);
     }
 }

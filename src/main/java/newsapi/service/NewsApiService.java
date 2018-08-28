@@ -1,8 +1,7 @@
 package newsapi.service;
 
 import newsapi.objects.Article;
-import newsapi.objects.Country;
-import newsapi.objects.NewsCategory;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
