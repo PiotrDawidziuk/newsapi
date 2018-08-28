@@ -6,7 +6,7 @@ public enum Country {
     UNITED_KINGDOM("gb"),
     ITALY("it"),
     UNITED_STATES("us"),
-    POLAND("pl");
+    pl("pl");
 
     private final String countryCode;
 

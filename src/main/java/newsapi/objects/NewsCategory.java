@@ -7,7 +7,7 @@ public enum NewsCategory {
     MUSIC("music"),
     SCIENCE("science"),
     SPORTS("sports"),
-    TECHNOLOGY("technology");
+    technology("technology");
 
     private final String categoryId;
 
