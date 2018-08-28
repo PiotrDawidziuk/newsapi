@@ -4,6 +4,7 @@ import newsapi.service.NewsApiService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class Application {
@@ -13,9 +14,7 @@ public class Application {
     }
 
     @Bean
-    public String apiKey() {
-        return "YOUR_API_KEY";
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
-
-
 }
