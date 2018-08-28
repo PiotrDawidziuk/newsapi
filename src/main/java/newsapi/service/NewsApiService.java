@@ -18,9 +18,9 @@ public class NewsApiService {
 
 
     public List<Article> findArticlesByCountryAndCategory(Country country, NewsCategory category) {
-        final String url = "https://newsapi.org/v1/articles";
+        final String url = "https://newsapi.org/v1/top-headlines";
         List<Article> articles = restTemplate.getForObject(url+"?category="+category+"&country="+country+
-                        &apiKey, List.class);
+                        "&apiKey="+apiKey, List.class);
         return articles;
     }
 
