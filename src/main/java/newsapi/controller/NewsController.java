@@ -4,6 +4,7 @@ import newsapi.objects.MyNewsResponse;
 import newsapi.objects.NewsApiResponse;
 import newsapi.service.NewsApiService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,5 +25,14 @@ public class NewsController {
        return myNewsResponse;
     }
 
+
+    @GetMapping("/news2/{country}/{category}")
+    public String news2(@PathVariable ("country") String country, @PathVariable ("category") String category, Model model) {
+        NewsApiResponse newsApiResponse = newsApiService.findArticlesByCountryAndCategory(country,category);
+        MyNewsResponse myNewsResponse = new MyNewsResponse(country,category, newsApiResponse.getArticles());
+        model.addAttribute("articles", myNewsResponse);
+
+        return "news";
+    }
 
 }
