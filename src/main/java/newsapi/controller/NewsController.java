@@ -12,8 +12,10 @@ public class NewsController {
 
    @Autowired
    NewsApiService newsApiService;
-    @GetMapping("/news/{country}/{category}")
+
+   @GetMapping("/news/{country}/{category}")
     public NewsApiResponse news(@PathVariable ("country") String country, @PathVariable ("category") String category) {
         return newsApiService.findArticlesByCountryAndCategory(country,category);
     }
+    
 }
