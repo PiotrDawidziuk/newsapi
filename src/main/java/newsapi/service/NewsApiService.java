@@ -21,4 +21,5 @@ public class NewsApiService {
                 "&apiKey="+apiKey, NewsApiResponse .class);
         return newsApiResponse;
     }
+
 }

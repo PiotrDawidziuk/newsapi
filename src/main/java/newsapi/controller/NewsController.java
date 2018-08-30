@@ -1,5 +1,6 @@
 package newsapi.controller;
 
+import newsapi.objects.MyNewsResponse;
 import newsapi.objects.NewsApiResponse;
 import newsapi.service.NewsApiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,14 @@ public class NewsController {
    NewsApiService newsApiService;
 
    @GetMapping("/news/{country}/{category}")
-    public NewsApiResponse news(@PathVariable ("country") String country, @PathVariable ("category") String category) {
-        return newsApiService.findArticlesByCountryAndCategory(country,category);
+    public MyNewsResponse news(@PathVariable ("country") String country, @PathVariable ("category") String category) {
+
+       NewsApiResponse newsApiResponse = newsApiService.findArticlesByCountryAndCategory(country,category);
+
+        MyNewsResponse myNewsResponse = new MyNewsResponse(country,category, newsApiResponse.getArticles());
+
+       return myNewsResponse;
     }
+
 
 }
