@@ -17,5 +17,5 @@ public class NewsController {
     public NewsApiResponse news(@PathVariable ("country") String country, @PathVariable ("category") String category) {
         return newsApiService.findArticlesByCountryAndCategory(country,category);
     }
-    
+
 }
