@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @GetMapping (path = "/home")
     public String home() {
-        return "home";
+        return ("home");
     }
 
     @GetMapping (path = "/test")
