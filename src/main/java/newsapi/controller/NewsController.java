@@ -25,14 +25,4 @@ public class NewsController {
        return myNewsResponse;
     }
 
-
-    @GetMapping("/news2/{country}/{category}")
-    public String news2(@PathVariable ("country") String country, @PathVariable ("category") String category, Model model) {
-        NewsApiResponse newsApiResponse = newsApiService.findArticlesByCountryAndCategory(country,category);
-        MyNewsResponse myNewsResponse = new MyNewsResponse(country,category, newsApiResponse.getArticles());
-        model.addAttribute("articles", myNewsResponse);
-
-        return "news";
-    }
-
 }

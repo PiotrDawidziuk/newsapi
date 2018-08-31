@@ -8,12 +8,17 @@ public class HomeController {
 
     @GetMapping (path = "/home")
     public String home() {
-        return ("home");
+        return ("index.html");
     }
 
     @GetMapping (path = "/test")
     @ResponseBody
     public String test() {
         return "TEST";
+    }
+
+    @GetMapping (path = "/news")
+    public String news() {
+        return ("news.html");
     }
 }
