@@ -1,0 +1,4 @@
+newsapi
+newsapi.controller
+newsapi.objects
+newsapi.service
